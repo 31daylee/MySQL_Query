@@ -14,5 +14,5 @@ update account_tb set number= '0111', password = '2222', balance = 9000
 					 where id = 4;
 
 insert into history_tb
-	(username, password,fullname,created_at)
-values('test1', 'asd1234', 'aa', now());
+	(amount, w_account_id,d_account_id,w_balance,d_balance,created_at)
+values(1000,1,3, 300,1000,now());
