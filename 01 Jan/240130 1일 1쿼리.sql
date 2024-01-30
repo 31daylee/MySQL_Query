@@ -5,4 +5,4 @@ from dept_manager as a
 join employees as b on a.emp_no = b.emp_no 
 join departments as c on a.dept_no = c.dept_no
 join titles as d on b.emp_no = d.emp_no
-where b.hire_date between '19791231' and '19910101' and b.gender = 'F' and a.to_date <='19950101';
+where b.hire_date between '19800101' and '19901231' and b.gender = 'F' and a.to_date <='19950101';
