@@ -29,3 +29,5 @@ values(100,1,null,1200,null, now());
 # 출금 처리 update
 update account_tb set number = '1111', password = '1234', 
 	balance = 1200, user_id='1' where id = '1';
+    
+show processlist;
