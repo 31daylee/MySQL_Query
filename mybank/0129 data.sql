@@ -31,3 +31,16 @@ update account_tb set number = '1111', password = '1234',
 	balance = 1200, user_id='1' where id = '1';
     
 show processlist;
+
+# 1번 계좌에서 출금 내역 
+select * from history_tb where w_account_id = 1;
+
+# 1번 계좌에서 입금 내역
+select * from history_tb where d_account_id = 1;
+
+# 1번 계좌에서 계좌 정보까지 출력하는 출금 결과 집합을 만드시오
+select h.id, h.amount, h.w_balance, a.number, h.created_at
+from history_tb as h 
+join account_tb as a 
+on h.w_account_id = a.id 
+where h.w_account_id = 1;

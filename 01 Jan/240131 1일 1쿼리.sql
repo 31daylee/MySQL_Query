@@ -8,4 +8,14 @@ join titles as c on a.emp_no = c.emp_no
 join salaries as d on a.emp_no = c.emp_no
 where b.dept_name = 'Human Resources' and c.title = 'Manager' and d.from_date between '19900101' and '19991231';
 
+SELECT ROUND(AVG(s.salary)) AS '평균연봉'
+FROM salaries AS s
+JOIN (
+    SELECT de.emp_no
+    FROM dept_emp AS de
+    JOIN departments AS d ON de.dept_no = d.dept_no
+    JOIN titles AS t ON de.emp_no = t.emp_no
+    WHERE d.dept_name = 'Human Resources' AND t.title = 'Manager'
+) AS filtered_employees ON s.emp_no = filtered_employees.emp_no
+WHERE s.from_date BETWEEN '1990-01-01' AND '1999-12-31';
 
