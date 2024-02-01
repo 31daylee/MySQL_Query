@@ -44,3 +44,10 @@ from history_tb as h
 join account_tb as a 
 on h.w_account_id = a.id 
 where h.w_account_id = 1;
+
+# 1번 계좌에서 계좌 정보까지 출력하는 입금 결과 집합을 만드시오
+select h.id, h.amount, h.w_balance, a.number, h.created_at
+from history_tb as h 
+join account_tb as a 
+on h.d_account_id = a.id 
+where h.d_account_id = 1;
